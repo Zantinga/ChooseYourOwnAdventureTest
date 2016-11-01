@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ChooseYourOwnAdventureTest</string>
+    <string name="intro">You find yourself in a dark forest. Alone. Cold. The wind howls through
+        the trees…at least you hope it was the wind. To your left, a yellow light shines in the
+        distance. Maybe a fire. Too far to make out any real details. To your right, you hear a
+        river flowing and what sounds like a woman singing.</string>
+    <string name="optionA">Go left toward the light.</string>
+    <string name="optionB">Go right toward the singing.</string>
+    <string name="optionAScenario">As you near the light, you see that it isn’t coming from a fire,
+        but a lantern. An old man sits in front of it with his hands outstretched as if he were
+        trying to warm them by it. You approach carefully and stop just outside of the arms
+        of the lantern’s glow.</string>
+</resources>
