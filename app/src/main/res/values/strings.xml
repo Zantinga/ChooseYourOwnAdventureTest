@@ -10,4 +10,10 @@
         but a lantern. An old man sits in front of it with his hands outstretched as if he were
         trying to warm them by it. You approach carefully and stop just outside of the arms
         of the lantern’s glow.</string>
+    <string name="optionBScenario">The woman’s voice grows clearer with each passing step and the
+        clearer it becomes the harder it is for you to pull yourself away from it. You suddenly
+        find yourself standing on the bank of a dark river. In the middle of the river, a woman
+        in a white dress stands seemingly unbothered by her surroundings.</string>
+    <string name="optionC">Step into the light.</string>
+    <string name="optionD">Go back toward the river.</string>
 </resources>
