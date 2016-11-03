@@ -35,9 +35,6 @@ public class MainActivity extends AppCompatActivity {
         button1Value = 1;
         button2Value = 2;
 
-        //storySoFar.setMovementMethod(new ScrollingMovementMethod());
-
-        //storySoFar.add("test1");
         storyArray.add(getResources().getString(R.string.intro));
         gridViewArrayAdapter.notifyDataSetChanged();
 
@@ -58,12 +55,14 @@ public class MainActivity extends AppCompatActivity {
                 });
                 button1.setText(updateButton1(button1Value));
                 button2.setText(updateButton2(button1Value));
+                button1.setVisibility(View.VISIBLE);
             }
         });
         button2.setText(R.string.optionB);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                button2.setVisibility(View.INVISIBLE);
                 storyArray.add(updateStory(button2Value));
                 gridViewArrayAdapter.notifyDataSetChanged();
 
@@ -74,24 +73,30 @@ public class MainActivity extends AppCompatActivity {
                         storySoFar.setSelection(gridViewArrayAdapter.getCount() - 1);
                     }
                 });
+                button1.setText(updateButton1(button2Value));
+                button2.setText(updateButton2(button2Value));
+                button2.setVisibility(View.VISIBLE);
             }
         });
     }
 
-//    // Setup variables
-//    public void initialize() {
-//        storySoFar = (TextView) findViewById(R.id.storySoFar);
-//        storySoFar.setText(R.string.intro);
-//    }
-
+    //TODO: RETURN ARRAYLIST OF STRING
     protected String updateStory(int storyValue) {
         switch(storyValue) {
             case 1:
                 button1Value = 3;
-                button2Value = 4;
+                button2Value = 2;
                 return getResources().getString(R.string.optionAScenario);
             case 2:
+                button1Value = 4;
+                button2Value = 1;
                 return getResources().getString(R.string.optionBScenario);
+            case 3:
+                button1Value = 5;
+                button2Value = 5;
+                return getResources().getString(R.string.optionCScenario);
+            case 5:
+                return getResources().getString(R.string.optionDScenario);
         }
         return "oops, no story value found!";
     }
@@ -100,6 +105,10 @@ public class MainActivity extends AppCompatActivity {
         switch(buttonValue) {
             case 3:
                 return getResources().getString(R.string.optionC);
+            case 4:
+                return getResources().getString(R.string.optionE);
+            case 5:
+                return getResources().getString(R.string.optionG);
         }
         return "oops, no button value found!";
     }
@@ -108,6 +117,10 @@ public class MainActivity extends AppCompatActivity {
         switch(buttonValue) {
             case 3:
                 return getResources().getString(R.string.optionD);
+            case 4:
+                return getResources().getString(R.string.optionF);
+            case 5:
+                return getResources().getString(R.string.optionH);
         }
         return "oops, no button value found!";
     }

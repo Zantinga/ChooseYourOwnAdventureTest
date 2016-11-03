@@ -16,4 +16,16 @@
         in a white dress stands seemingly unbothered by her surroundings.</string>
     <string name="optionC">Step into the light.</string>
     <string name="optionD">Go back toward the river.</string>
+    <string name="optionE">Call out to the woman.</string>
+    <string name="optionF">Go back toward the light.</string>
+    <string name="optionCScenario">The old man doesn’t seem to notice you as you emerge from the
+        darkness and take a seat beside him. Awkwardly, you extend your hands to the lantern, but
+        feel no warmth so you retract them. Several moments pass before the old man asks you your
+        name without ever really looking at you.</string>
+    <string name="optionG">I can\'t remember.</string>
+    <string name="optionH">(lie) James.</string>
+    <string name="optionDScenario">A wave of uneasiness washes over you as you watch the old man
+        in the dim light of the lantern. Suddenly, you have an urge to run, but you don’t. Instead
+        you turn around slowly and proceed toward the river where you thought you heard singing.
+        Singing seems safer than a strange old man by a lantern.</string>
 </resources>
