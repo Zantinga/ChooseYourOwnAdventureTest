@@ -1,31 +1,3 @@
 <resources>
     <string name="app_name">ChooseYourOwnAdventureTest</string>
-    <string name="intro">You find yourself in a dark forest. Alone. Cold. The wind howls through
-        the trees…at least you hope it was the wind. To your left, a yellow light shines in the
-        distance. Maybe a fire. Too far to make out any real details. To your right, you hear a
-        river flowing and what sounds like a woman singing.</string>
-    <string name="optionA">Go left toward the light.</string>
-    <string name="optionB">Go right toward the singing.</string>
-    <string name="optionAScenario">As you near the light, you see that it isn’t coming from a fire,
-        but a lantern. An old man sits in front of it with his hands outstretched as if he were
-        trying to warm them by it. You approach carefully and stop just outside of the arms
-        of the lantern’s glow.</string>
-    <string name="optionBScenario">The woman’s voice grows clearer with each passing step and the
-        clearer it becomes the harder it is for you to pull yourself away from it. You suddenly
-        find yourself standing on the bank of a dark river. In the middle of the river, a woman
-        in a white dress stands seemingly unbothered by her surroundings.</string>
-    <string name="optionC">Step into the light.</string>
-    <string name="optionD">Go back toward the river.</string>
-    <string name="optionE">Call out to the woman.</string>
-    <string name="optionF">Go back toward the light.</string>
-    <string name="optionCScenario">The old man doesn’t seem to notice you as you emerge from the
-        darkness and take a seat beside him. Awkwardly, you extend your hands to the lantern, but
-        feel no warmth so you retract them. Several moments pass before the old man asks you your
-        name without ever really looking at you.</string>
-    <string name="optionG">I can\'t remember.</string>
-    <string name="optionH">(lie) James.</string>
-    <string name="optionDScenario">A wave of uneasiness washes over you as you watch the old man
-        in the dim light of the lantern. Suddenly, you have an urge to run, but you don’t. Instead
-        you turn around slowly and proceed toward the river where you thought you heard singing.
-        Singing seems safer than a strange old man by a lantern.</string>
 </resources>
