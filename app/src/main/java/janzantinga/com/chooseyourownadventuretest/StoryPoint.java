@@ -1,6 +1,6 @@
 package janzantinga.com.chooseyourownadventuretest;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by Jan Zantinga on 11/3/2016.
@@ -8,7 +8,7 @@ import java.util.List;
 
 public class StoryPoint {
 
-    private List<String> newStoryPoints;
+    private ArrayList<String> newStoryPoints;
     private String button1Info, button2Info;
     private int button1Value, button2Value;
 
@@ -16,7 +16,7 @@ public class StoryPoint {
 
     }
 
-    public StoryPoint(List<String> newStoryPoints, String button1Info, String button2Info,
+    public StoryPoint(ArrayList<String> newStoryPoints, String button1Info, String button2Info,
                       int button1Value, int button2Value) {
         this.newStoryPoints = newStoryPoints;
         this.button1Info = button1Info;
@@ -25,11 +25,11 @@ public class StoryPoint {
         this.button2Value = button2Value;
     }
 
-    public List<String> getNewStoryPoints() {
+    public ArrayList<String> getNewStoryPoints() {
         return newStoryPoints;
     }
 
-    public void setNewStoryPoints(List<String> newStoryPoints) {
+    public void setNewStoryPoints(ArrayList<String> newStoryPoints) {
         this.newStoryPoints = newStoryPoints;
     }
 

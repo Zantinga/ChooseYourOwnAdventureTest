@@ -1,7 +1,6 @@
 package janzantinga.com.chooseyourownadventuretest;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Jan Zantinga on 11/3/2016.
@@ -10,13 +9,18 @@ import java.util.List;
 public class ProgressStory {
 
     public static StoryPoint getNextStoryPoint(int nextStoryPoint) {
-        List<String> storyPoints = new ArrayList<String>();
+        ArrayList<String> storyPoints = new ArrayList<String>();
         switch(nextStoryPoint) {
             case 1:
-                break;
+                storyPoints.add("this is option 1");
+                storyPoints.add("which option would you like next?");
+                return new StoryPoint(storyPoints, "Option 2", "Option 3", 2, 3);
+            case 2:
+                storyPoints.add("this is option 2");
+                return new StoryPoint(storyPoints, "Option 4", "Option 5", 4, 5);
             default:
-                return new StoryPoint();
+                storyPoints.add("No value found!");
+                return new StoryPoint(storyPoints, "No value for button 1", "No value for button 2", 0, 0);
         }
-        return new StoryPoint();
     }
 }
