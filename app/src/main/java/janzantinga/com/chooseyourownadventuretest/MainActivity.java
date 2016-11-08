@@ -1,10 +1,10 @@
 package janzantinga.com.chooseyourownadventuretest;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
@@ -115,12 +115,75 @@ public class MainActivity extends AppCompatActivity {
     public void onPause() {
         super.onPause();
         Log.d("Debug", "onPause has been called.");
+
+        SharedPreferences settings = getPreferences(0);
+        SharedPreferences.Editor editor = settings.edit();
+
+        editor.putInt("story_array_size", storyArray.size());
+        for(int i=0; i < storyArray.size(); i++) {
+            editor.putString("storyArray_" + i, storyArray.get(i));
+        }
+
+//        ArrayList<String> storyPointToSave = storyPoint.getNewStoryPoints();
+//        editor.putInt("story_point_size", storyPointToSave.size());
+//        for(int i=0; i < storyPointToSave.size(); i++) {
+//            editor.putString("storyPoint_" + i, storyPointToSave.get(i));
+//        }
+
+        editor.putString("button1Info", storyPoint.getButton1Info());
+        editor.putString("button2Info", storyPoint.getButton2Info());
+        editor.putInt("button1Value", storyPoint.getButton1Value());
+        editor.putInt("button2Value", storyPoint.getButton2Value());
+
+        editor.putInt("storyPath", storyPath);
+
+        editor.commit();
     }
 
     @Override
     public void onResume() {
         super.onResume();
         Log.d("Debug", "onResume has been called.");
+        setContentView(R.layout.activity_main); // Set View
+        initialize(); // Sets up blank fields
+
+        SharedPreferences settings = getPreferences(0);
+
+        storyPath = settings.getInt("storyPath", 0);
+        if(storyPath == 0) {
+            initialize();
+
+            storyArray.add("hello");
+            storyPoint.setButton1Info("option 1");
+            storyPoint.setButton2Info("option 2");
+            storyPoint.setButton1Value(1);
+            storyPoint.setButton2Value(2);
+            button1.setText(storyPoint.getButton1Info());
+            button2.setText(storyPoint.getButton2Info());
+            gridViewArrayAdapter.notifyDataSetChanged();
+        }
+        if(storyPath != 0) {
+
+            int story_array_size = settings.getInt("story_array_size", 0);
+            for (int i = 0; i < story_array_size; i++) {
+                storyArray.add(settings.getString("storyArray_" + i, "Error"));
+            }
+
+            gridViewArrayAdapter.notifyDataSetChanged();
+
+            storyPoint.setButton1Value(settings.getInt("button1Value", 0));
+            storyPoint.setButton2Value(settings.getInt("button2Value", 0));
+            storyPoint.setButton1Info(settings.getString("button1Info", "Error"));
+            storyPoint.setButton2Info(settings.getString("button2Info", "Error"));
+            button1.setText(storyPoint.getButton1Info());
+            button2.setText(storyPoint.getButton2Info());
+
+//        int story_point_size = settings.getInt("story_point_size", 0);
+//        ArrayList<String> savedStoryPoints = new ArrayList<String>();
+//        for(int i = 0; i < story_point_size; i++) {
+//            savedStoryPoints.add(settings.getString("storyPoint_"))
+//        }
+        }
     }
 
     @Override
