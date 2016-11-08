@@ -35,60 +35,7 @@ public class MainActivity extends AppCompatActivity {
         storyPoint.setButton2Value(2);
         button1.setText(storyPoint.getButton1Info());
         button2.setText(storyPoint.getButton2Info());
-        gridViewArrayAdapter.notifyDataSetChanged();
 
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                button1.setVisibility(View.INVISIBLE);
-                button2.setVisibility(View.INVISIBLE);
-                storyPoint = ProgressStory.getNextStoryPoint(storyPoint.getButton1Value());
-                final ArrayList<String> newStoryArray = storyPoint.getNewStoryPoints();
-
-                for(int i = 0; i < newStoryArray.size(); i++) {
-                    storyArray.add(newStoryArray.get(i));
-                    gridViewArrayAdapter.notifyDataSetChanged();
-                    storySoFar.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            // Select the last row so it will scroll into view...
-                            storySoFar.setSelection(gridViewArrayAdapter.getCount() - 1);
-                        }
-                    });
-                }
-                button1.setText(storyPoint.getButton1Info());
-                button2.setText(storyPoint.getButton2Info());
-                button1.setVisibility(View.VISIBLE);
-                button2.setVisibility(View.VISIBLE);
-            }
-        });
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                button1.setVisibility(View.INVISIBLE);
-                button2.setVisibility(View.INVISIBLE);
-                storyPoint = ProgressStory.getNextStoryPoint(storyPoint.getButton2Value());
-                final ArrayList<String> newStoryArray = storyPoint.getNewStoryPoints();
-
-                gridViewArrayAdapter.notifyDataSetChanged();
-
-                for(int i = 0; i < newStoryArray.size(); i++) {
-                    storyArray.add(newStoryArray.get(i));
-                    gridViewArrayAdapter.notifyDataSetChanged();
-                    storySoFar.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            // Select the last row so it will scroll into view...
-                            storySoFar.setSelection(gridViewArrayAdapter.getCount() - 1);
-                        }
-                    });
-                }
-                button1.setText(storyPoint.getButton1Info());
-                button2.setText(storyPoint.getButton2Info());
-                button1.setVisibility(View.VISIBLE);
-                button2.setVisibility(View.VISIBLE);
-            }
-        });
     }
 
     public void initialize() {
@@ -178,12 +125,72 @@ public class MainActivity extends AppCompatActivity {
             button1.setText(storyPoint.getButton1Info());
             button2.setText(storyPoint.getButton2Info());
 
-//        int story_point_size = settings.getInt("story_point_size", 0);
-//        ArrayList<String> savedStoryPoints = new ArrayList<String>();
-//        for(int i = 0; i < story_point_size; i++) {
-//            savedStoryPoints.add(settings.getString("storyPoint_"))
-//        }
+            gridViewArrayAdapter.notifyDataSetChanged();
+            storySoFar.post(new Runnable() {
+                @Override
+                public void run() {
+                    // Select the last row so it will scroll into view...
+                    storySoFar.setSelection(gridViewArrayAdapter.getCount() - 1);
+                }
+            });
         }
+
+        gridViewArrayAdapter.notifyDataSetChanged();
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                button1.setVisibility(View.INVISIBLE);
+                button2.setVisibility(View.INVISIBLE);
+                storyPoint = ProgressStory.getNextStoryPoint(storyPoint.getButton1Value());
+                storyPath = storyPoint.getButton1Value();
+                final ArrayList<String> newStoryArray = storyPoint.getNewStoryPoints();
+
+                for(int i = 0; i < newStoryArray.size(); i++) {
+                    storyArray.add(newStoryArray.get(i));
+                    gridViewArrayAdapter.notifyDataSetChanged();
+                    storySoFar.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            // Select the last row so it will scroll into view...
+                            storySoFar.setSelection(gridViewArrayAdapter.getCount() - 1);
+                        }
+                    });
+                }
+                button1.setText(storyPoint.getButton1Info());
+                button2.setText(storyPoint.getButton2Info());
+                button1.setVisibility(View.VISIBLE);
+                button2.setVisibility(View.VISIBLE);
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                button1.setVisibility(View.INVISIBLE);
+                button2.setVisibility(View.INVISIBLE);
+                storyPoint = ProgressStory.getNextStoryPoint(storyPoint.getButton2Value());
+                storyPath = storyPoint.getButton2Value();
+                final ArrayList<String> newStoryArray = storyPoint.getNewStoryPoints();
+
+                gridViewArrayAdapter.notifyDataSetChanged();
+
+                for(int i = 0; i < newStoryArray.size(); i++) {
+                    storyArray.add(newStoryArray.get(i));
+                    gridViewArrayAdapter.notifyDataSetChanged();
+                    storySoFar.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            // Select the last row so it will scroll into view...
+                            storySoFar.setSelection(gridViewArrayAdapter.getCount() - 1);
+                        }
+                    });
+                }
+                button1.setText(storyPoint.getButton1Info());
+                button2.setText(storyPoint.getButton2Info());
+                button1.setVisibility(View.VISIBLE);
+                button2.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     @Override
