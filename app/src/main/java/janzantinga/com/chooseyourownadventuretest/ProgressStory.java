@@ -20,6 +20,9 @@ public class ProgressStory {
                 return new StoryPoint(storyPoints, "Option 4", "Option 5", 4, 5);
             default:
                 storyPoints.add("No value found!");
+                storyPoints.add("No value found2!");
+                storyPoints.add("No value found3!");
+                storyPoints.add("No value found4!");
                 return new StoryPoint(storyPoints, "No value for button 1", "No value for button 2", 0, 0);
         }
     }
