@@ -11,10 +11,6 @@ import android.widget.GridView;
 
 import java.util.ArrayList;
 
-/**
- * Created by Jan Zantinga on 4/1/2017.
- */
-
 public class GameActivity extends Activity {
     public GridView storySoFar;
     public Button button1, button2;
@@ -22,6 +18,8 @@ public class GameActivity extends Activity {
     public static ArrayList<String> storyArray;
     public static ArrayAdapter<String> gridViewArrayAdapter;
     public static StoryPoint storyPoint;
+
+    //TODO: ADD TYPEFACES
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +39,10 @@ public class GameActivity extends Activity {
     }
 
     public void initialize() {
-        storyArray = new ArrayList<String>();
+        storyArray = new ArrayList<>();
         storyPoint = new StoryPoint(new ArrayList<String>(), "optionA", "optionB", 1, 2);
 
-        gridViewArrayAdapter = new ArrayAdapter<String>(
+        gridViewArrayAdapter = new ArrayAdapter<>(
                 this, android.R.layout.simple_list_item_1, storyArray
         );
 
@@ -89,7 +87,9 @@ public class GameActivity extends Activity {
 
         editor.putInt("storyPath", storyPath);
 
-        editor.commit();
+        editor.apply();
+        //uing apply because it allows writing in the background
+        //editor.commit();
     }
 
     @Override
